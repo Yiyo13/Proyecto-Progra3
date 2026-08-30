@@ -11,8 +11,14 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class Index extends JPanel {
+	private JScrollPane scrollPane;
+	private JTable table;
+	private DefaultTableModel model;
 
 	/**
 	 * Create the panel.
@@ -60,6 +66,14 @@ public class Index extends JPanel {
 		lblCategora_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCategora_1.setHorizontalTextPosition(SwingConstants.LEFT);
 		panel_3.add(lblCategora_1);
+		
+		scrollPane = new JScrollPane();
+		panel_2.add(scrollPane, BorderLayout.CENTER);
+		
+		model = new DefaultTableModel();
+		table = new JTable(model);
+		scrollPane.setViewportView(table);
+		table.setDefaultEditor(Object.class, null); //traje esta linea de la tarea, no deja que editen la tabla desde la vista
 
 	}
 

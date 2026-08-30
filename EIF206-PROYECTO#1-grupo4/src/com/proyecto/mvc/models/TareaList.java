@@ -54,7 +54,7 @@ public class TareaList {
 		return list;
 	}
 
-	public int countByIdCategoria(int idCategoria) {
+	public int contarPorCategoria(int idCategoria) {
 
 		int count = 0;
 
