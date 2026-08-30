@@ -32,7 +32,14 @@ public class TareaList {
 			list.remove(item);
 		}
 	}
-
+	
+	public void marcarCompletada(int id) {
+		Tarea item = find(id);
+		if (item != null) {
+			item.setCompletada(true);
+		}
+	}
+	
 	// CONSULTAS
 
 	public Tarea find(int id) {
@@ -60,5 +67,25 @@ public int countByIdCategoria(int idCategoria) {
 		return count;
 		
 	}
+
+public ArrayList<Tarea> pendientesPorCategoria(int idCategoria) {
+	ArrayList<Tarea> result = new ArrayList<>();
+	for (Tarea item : list) {
+		if (item.getIdCategoria() == idCategoria && !item.isCompletada()) {
+			result.add(item);
+		}
+	}
+	return result;
+}
+
+public ArrayList<Tarea> completadasPorCategoria(int idCategoria) {
+	ArrayList<Tarea> result = new ArrayList<>();
+	for (Tarea item : list) {
+		if (item.getIdCategoria() == idCategoria && item.isCompletada()) {
+			result.add(item);
+		}
+	}
+	return result;
+}
 
 }
