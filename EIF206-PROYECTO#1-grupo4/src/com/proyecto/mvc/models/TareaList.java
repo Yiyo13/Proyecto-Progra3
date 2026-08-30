@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class TareaList {
 
 	private ArrayList<Tarea> list;
-	
+
 	public TareaList() {
 		list = new ArrayList<>();
 	}
-	
+
 	// OPERACIONES
 
 	public void store(Tarea item) {
@@ -32,14 +32,14 @@ public class TareaList {
 			list.remove(item);
 		}
 	}
-	
+
 	public void marcarCompletada(int id) {
 		Tarea item = find(id);
 		if (item != null) {
 			item.setCompletada(true);
 		}
 	}
-	
+
 	// CONSULTAS
 
 	public Tarea find(int id) {
@@ -53,39 +53,39 @@ public class TareaList {
 	public ArrayList<Tarea> all() {
 		return list;
 	}
-	
-public int countByIdCategoria(int idCategoria) {
-		
+
+	public int countByIdCategoria(int idCategoria) {
+
 		int count = 0;
-		
+
 		for (Tarea item : list) {
 			if(item.getIdCategoria() == idCategoria) {
-			count++;
+				count++;
 			}
 		}
-		
+
 		return count;
-		
+
 	}
 
-public ArrayList<Tarea> pendientesPorCategoria(int idCategoria) {
-	ArrayList<Tarea> result = new ArrayList<>();
-	for (Tarea item : list) {
-		if (item.getIdCategoria() == idCategoria && !item.isCompletada()) {
-			result.add(item);
+	public ArrayList<Tarea> pendientesPorCategoria(int idCategoria) {
+		ArrayList<Tarea> result = new ArrayList<>();
+		for (Tarea item : list) {
+			if (item.getIdCategoria() == idCategoria && !item.isCompletada()) {
+				result.add(item);
+			}
 		}
+		return result;
 	}
-	return result;
-}
 
-public ArrayList<Tarea> completadasPorCategoria(int idCategoria) {
-	ArrayList<Tarea> result = new ArrayList<>();
-	for (Tarea item : list) {
-		if (item.getIdCategoria() == idCategoria && item.isCompletada()) {
-			result.add(item);
+	public ArrayList<Tarea> completadasPorCategoria(int idCategoria) {
+		ArrayList<Tarea> result = new ArrayList<>();
+		for (Tarea item : list) {
+			if (item.getIdCategoria() == idCategoria && item.isCompletada()) {
+				result.add(item);
+			}
 		}
+		return result;
 	}
-	return result;
-}
 
 }
