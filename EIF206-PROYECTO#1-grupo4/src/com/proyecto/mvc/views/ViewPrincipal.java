@@ -68,7 +68,7 @@ public class ViewPrincipal extends JFrame {
 		this.setTitle("Sistema Gestor de Tareas");
 	}
 
-	public void setContent(JComponent c, String title) {
+	public void setContenido(JComponent c, String title) {
 		setTitle("Sistema Gestor de Tareas - " + title);
 		panelContenido.removeAll();
 		panelContenido.add(c, BorderLayout.CENTER);
