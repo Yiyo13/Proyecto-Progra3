@@ -75,11 +75,29 @@ public class Index extends JPanel {
 		model = new DefaultTableModel();
 		model.addColumn("ID");
 		model.addColumn("Nombre");
-		model.addColumn("Categoría");
+		model.addColumn("Descripcion");
+		
 		model.addRow(new Object[]{1, "Tarea de prueba", "Trabajo"});
 		model.addRow(new Object[]{2, "Otra tarea", "Personal"});//prueba para ver si la ventana funciona, recordar eliminar
 		table = new JTable(model);
 		scrollPane.setViewportView(table);
+		
+		JPanel panel_4 = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel_4.getLayout();
+		flowLayout.setHgap(15);
+		panel_2.add(panel_4, BorderLayout.SOUTH);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		panel_4.add(btnGuardar);
+		
+		JButton btnEditar = new JButton("Editar");
+		panel_4.add(btnEditar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		panel_4.add(btnEliminar);
+		
+		JButton btnCompletada = new JButton("Completada");
+		panel_4.add(btnCompletada);
 		table.setDefaultEditor(Object.class, null); //traje esta linea de la tarea, no deja que editen la tabla desde la vista
 
 	}
