@@ -16,9 +16,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class Index extends JPanel {
-	private JScrollPane scrollPane;
-	private JTable table;
-	private DefaultTableModel model;
+	public JScrollPane scrollPane;
+	public JTable table;
+	public DefaultTableModel model;
+	public JComboBox cbxCategoria;
+	public JButton btnCargar;
 
 	/**
 	 * Create the panel.
@@ -48,11 +50,11 @@ public class Index extends JPanel {
 		lblCategora.setVerticalAlignment(SwingConstants.BOTTOM);
 		panel_1.add(lblCategora);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setPreferredSize(new Dimension(300, 22));
-		panel_1.add(comboBox);
+		cbxCategoria = new JComboBox();
+		cbxCategoria.setPreferredSize(new Dimension(300, 22));
+		panel_1.add(cbxCategoria);
 		
-		JButton btnCargar = new JButton("Cargar");
+		btnCargar = new JButton("Cargar");
 		panel_1.add(btnCargar);
 		
 		JPanel panel_2 = new JPanel();

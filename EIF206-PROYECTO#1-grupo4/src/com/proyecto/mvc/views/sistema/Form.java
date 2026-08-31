@@ -16,7 +16,11 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 
 public class Form extends JPanel {
-	private JTextField textField;
+	public JTextField tNombre;
+	public JTextArea taDescripcion;
+	public JComboBox cbxCategoria;
+	public JButton btnGuardar;
+	public JButton btnCancelar;
 
 	/**
 	 * Create the panel.
@@ -24,14 +28,14 @@ public class Form extends JPanel {
 	public Form() {
 		setBorder(new EmptyBorder(0, 0, 0, 0));
 		setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.WHITE);
 		panel.setBackground(Color.DARK_GRAY);
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		add(panel, BorderLayout.NORTH);
-		
+
 		JLabel lblTareasregistrar = new JLabel("Tareas-Registrar/Editar");
 		lblTareasregistrar.setForeground(Color.WHITE);
 		lblTareasregistrar.setBackground(Color.LIGHT_GRAY);
@@ -40,46 +44,46 @@ public class Form extends JPanel {
 		lblTareasregistrar.setHorizontalTextPosition(SwingConstants.LEFT);
 		lblTareasregistrar.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(lblTareasregistrar);
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EmptyBorder(40, 40, 40, 40));
 		add(panel_1, BorderLayout.WEST);
 		panel_1.setLayout(new GridLayout(10, 1, 0, 15));
-		
+
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalTextPosition(SwingConstants.LEFT);
 		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_1.add(lblNombre);
-		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(10);
-		
+
+		tNombre = new JTextField();
+		panel_1.add(tNombre);
+		tNombre.setColumns(10);
+
 		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
 		panel_1.add(lblDescripcin);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setMinimumSize(new Dimension(20, 20));
-		panel_1.add(textArea);
-		
+
+		taDescripcion = new JTextArea();
+		taDescripcion.setMinimumSize(new Dimension(20, 20));
+		panel_1.add(taDescripcion);
+
 		JLabel lblCategora = new JLabel("Categor\u00EDa");
 		panel_1.add(lblCategora);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una"}));
-		panel_1.add(comboBox);
-		
+
+		cbxCategoria = new JComboBox();
+		cbxCategoria.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una"}));
+		panel_1.add(cbxCategoria);
+
 		JPanel panel_3 = new JPanel();
 		panel_1.add(panel_3);
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 4, 10, 10));
-		
-		JButton btnGuardar = new JButton("Guardar");
+
+		btnGuardar = new JButton("Guardar");
 		panel_2.add(btnGuardar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
+
+		btnCancelar = new JButton("Cancelar");
 		panel_2.add(btnCancelar);
 
 	}

@@ -34,5 +34,12 @@ public class Categoria {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	@Override
+	public String toString() {
+		// solo ocupo que retorne el nombre de la categoria
+		return nombre;
+	}
+
 
 }

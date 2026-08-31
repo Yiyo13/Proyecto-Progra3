@@ -13,7 +13,10 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 
 public class FormCategoria extends JPanel {
-	private JTextField textField;
+	public JTextField tNombre;
+	public JButton btnGuardar;
+	public JButton btnCancelar;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -45,18 +48,18 @@ public class FormCategoria extends JPanel {
 		JLabel lblNombre = new JLabel("Nombre");
 		panel_1.add(lblNombre);
 		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(10);
+		tNombre = new JTextField();
+		panel_1.add(tNombre);
+		tNombre.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 10, 10));
 		
-		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton("Guardar");
 		panel_2.add(btnGuardar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
 		panel_2.add(btnCancelar);
 	}
 }

@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
@@ -16,7 +18,12 @@ import java.awt.Color;
 
 public class ViewPrincipal extends JFrame {
 
-	private JPanel contentPane;
+	public JPanel contentPane;
+	public JButton btnTareasPendientes;
+	public JButton btnTareasCompletadas;
+	public JButton btnCategoras;
+	private JPanel panelContenido;
+	
 
 	/**
 	 * Create the frame.
@@ -41,15 +48,32 @@ public class ViewPrincipal extends JFrame {
 		panel.add(panel_1, BorderLayout.NORTH);
 		panel_1.setLayout(new GridLayout(3, 1, 0, 10));
 		
-		JButton btnTareasPendientes = new JButton("Tareas Pendientes");
+		btnTareasPendientes = new JButton("Tareas Pendientes");
 		panel_1.add(btnTareasPendientes);
 		
-		JButton btnTareasCompletadas = new JButton("Tareas Completadas");
+		btnTareasCompletadas = new JButton("Tareas Completadas");
 		btnTareasCompletadas.setPreferredSize(new Dimension(151, 40));
 		panel_1.add(btnTareasCompletadas);
 		
-		JButton btnCategoras = new JButton("Categor\u00EDas");
+		btnCategoras = new JButton("Categor\u00EDas");
 		panel_1.add(btnCategoras);
+		
+		panelContenido = new JPanel();
+		contentPane.add(panelContenido, BorderLayout.CENTER);
+	}
+	
+	public void init() {
+		this.setVisible(true);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Sistema Gestor de Tareas");
 	}
 
+	public void setContent(JComponent c, String title) {
+		setTitle("Sistema Gestor de Tareas - " + title);
+		panelContenido.removeAll();
+		panelContenido.add(c, BorderLayout.CENTER);
+		panelContenido.repaint();
+		panelContenido.revalidate();
+	}
+	
 }
