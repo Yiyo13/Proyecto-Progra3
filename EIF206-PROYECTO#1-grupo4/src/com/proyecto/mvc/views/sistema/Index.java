@@ -71,6 +71,11 @@ public class Index extends JPanel {
 		panel_2.add(scrollPane, BorderLayout.CENTER);
 		
 		model = new DefaultTableModel();
+		model.addColumn("ID");
+		model.addColumn("Nombre");
+		model.addColumn("Categoría");
+		model.addRow(new Object[]{1, "Tarea de prueba", "Trabajo"});
+		model.addRow(new Object[]{2, "Otra tarea", "Personal"});
 		table = new JTable(model);
 		scrollPane.setViewportView(table);
 		table.setDefaultEditor(Object.class, null); //traje esta linea de la tarea, no deja que editen la tabla desde la vista

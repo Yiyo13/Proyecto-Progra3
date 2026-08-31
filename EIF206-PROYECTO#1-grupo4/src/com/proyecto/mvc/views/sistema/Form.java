@@ -44,7 +44,7 @@ public class Form extends JPanel {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EmptyBorder(40, 40, 40, 40));
 		add(panel_1, BorderLayout.WEST);
-		panel_1.setLayout(new GridLayout(10, 1, 0, 10));
+		panel_1.setLayout(new GridLayout(10, 1, 0, 15));
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -69,11 +69,18 @@ public class Form extends JPanel {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una"}));
 		panel_1.add(comboBox);
 		
-		JButton btnGuardar = new JButton("Guardar");
-		panel_1.add(btnGuardar);
+		JPanel panel_3 = new JPanel();
+		panel_1.add(panel_3);
 		
-		JButton btnCancekar = new JButton("Cancelar\r\n");
-		panel_1.add(btnCancekar);
+		JPanel panel_2 = new JPanel();
+		panel_1.add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 4, 10, 10));
+		
+		JButton btnGuardar = new JButton("Guardar");
+		panel_2.add(btnGuardar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		panel_2.add(btnCancelar);
 
 	}
 
