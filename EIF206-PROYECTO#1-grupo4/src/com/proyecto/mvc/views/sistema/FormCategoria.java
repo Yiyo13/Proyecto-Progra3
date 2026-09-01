@@ -30,13 +30,13 @@ public class FormCategoria extends JPanel {
 		
 		panel = new JPanel();
 		panel.setForeground(Color.WHITE);
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(new Color(127, 255, 212));
 		FlowLayout fl_panel = (FlowLayout) panel.getLayout();
 		fl_panel.setAlignment(FlowLayout.LEFT);
 		add(panel, BorderLayout.NORTH);
 		
 		lblCategoriasregistrareditar = new JLabel("Categorias-Registrar/Editar");
-		lblCategoriasregistrareditar.setForeground(Color.WHITE);
+		lblCategoriasregistrareditar.setForeground(new Color(0, 0, 0));
 		lblCategoriasregistrareditar.setBackground(Color.LIGHT_GRAY);
 		lblCategoriasregistrareditar.setBorder(new EmptyBorder(30, 30, 30, 30));
 		lblCategoriasregistrareditar.setVerticalAlignment(SwingConstants.BOTTOM);

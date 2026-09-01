@@ -36,12 +36,12 @@ public class ViewPrincipal extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(new Color(127, 255, 212));
 		contentPane.add(panel, BorderLayout.WEST);
 		panel.setLayout(new BorderLayout(0, 10));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.DARK_GRAY);
+		panel_1.setBackground(new Color(127, 255, 212));
 		panel_1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		panel_1.setForeground(Color.GRAY);
 		panel.add(panel_1, BorderLayout.NORTH);

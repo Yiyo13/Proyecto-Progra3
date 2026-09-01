@@ -31,13 +31,13 @@ public class Form extends JPanel {
 
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.WHITE);
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(new Color(127, 255, 212));
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		add(panel, BorderLayout.NORTH);
 
 		JLabel lblTareasregistrar = new JLabel("Tareas-Registrar/Editar");
-		lblTareasregistrar.setForeground(Color.WHITE);
+		lblTareasregistrar.setForeground(new Color(0, 0, 0));
 		lblTareasregistrar.setBackground(Color.LIGHT_GRAY);
 		lblTareasregistrar.setBorder(new EmptyBorder(20, 20, 20, 20));
 		lblTareasregistrar.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -48,7 +48,7 @@ public class Form extends JPanel {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EmptyBorder(40, 40, 40, 40));
 		add(panel_1, BorderLayout.WEST);
-		panel_1.setLayout(new GridLayout(10, 1, 0, 15));
+		panel_1.setLayout(new GridLayout(10, 1, 0, 10));
 
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalTextPosition(SwingConstants.LEFT);

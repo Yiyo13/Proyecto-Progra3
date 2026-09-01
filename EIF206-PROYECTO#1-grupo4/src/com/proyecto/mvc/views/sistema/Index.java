@@ -34,15 +34,15 @@ public class Index extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(new Color(127, 255, 212));
 		add(panel, BorderLayout.NORTH);
 		panel.setLayout(new GridLayout(2, 1, 0, 0));
 
 		lblTareasPendientes = new JLabel("Tareas Pendientes");
 		lblTareasPendientes.setMaximumSize(new Dimension(106, 40));
 		lblTareasPendientes.setPreferredSize(new Dimension(135, 60));
-		lblTareasPendientes.setForeground(Color.WHITE);
-		lblTareasPendientes.setBackground(Color.WHITE);
+		lblTareasPendientes.setForeground(new Color(0, 0, 0));
+		lblTareasPendientes.setBackground(new Color(127, 255, 212));
 		panel.add(lblTareasPendientes);
 
 		JPanel panel_1 = new JPanel();

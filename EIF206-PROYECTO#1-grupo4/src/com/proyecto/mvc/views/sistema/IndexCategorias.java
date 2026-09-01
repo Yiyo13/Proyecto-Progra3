@@ -28,7 +28,8 @@ public class IndexCategorias extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setForeground(Color.BLACK);
+		panel.setBackground(new Color(127, 255, 212));
 		add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
@@ -38,8 +39,8 @@ public class IndexCategorias extends JPanel {
 		lblCategoriaslista.setMaximumSize(new Dimension(106,40));
 		lblCategoriaslista.setPreferredSize(new Dimension(135,60));
 		lblCategoriaslista.setBorder(new EmptyBorder(20, 20, 20, 20));
-		lblCategoriaslista.setForeground(Color.WHITE);
-		lblCategoriaslista.setBackground(Color.WHITE);
+		lblCategoriaslista.setForeground(Color.BLACK);
+		lblCategoriaslista.setBackground(Color.BLACK);
 		panel.add(lblCategoriaslista);
 		
 		JPanel panel_1 = new JPanel();
