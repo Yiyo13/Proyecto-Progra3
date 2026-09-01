@@ -26,7 +26,7 @@ public class ControllerPrincipal {
 		loadData();
 
 		controllerTareas = new ControllerTareas(tareaList, categoriaList, vp);
-		controllerCategorias = new ControllerCategorias(categoriaList, vp);
+		controllerCategorias = new ControllerCategorias(categoriaList, tareaList, vp);
 
 		vp.btnTareasPendientes.addActionListener(e -> controllerTareas.indexPendientes());
 		vp.btnTareasCompletadas.addActionListener(e -> controllerTareas.indexCompletadas());
@@ -43,15 +43,18 @@ public class ControllerPrincipal {
 		Categoria trabajo = new Categoria("Trabajo");
 		Categoria personal = new Categoria("Personal");
 		Categoria universidad = new Categoria("Universidad");
+		Categoria pesca = new Categoria("Pesca");
 
 		categoriaList.store(trabajo);
 		categoriaList.store(personal);
 		categoriaList.store(universidad);
+		categoriaList.store(pesca);
 
 		// 10 tareas por categoria, entre 2 y 6 completadas por categoria
 		cargarTareasDePrueba(trabajo, 4);
 		cargarTareasDePrueba(personal, 6);
 		cargarTareasDePrueba(universidad, 2);
+		cargarTareasDePrueba(pesca, 8);
 
 	}
 

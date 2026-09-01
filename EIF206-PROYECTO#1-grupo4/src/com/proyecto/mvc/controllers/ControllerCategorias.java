@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 
 import com.proyecto.mvc.models.Categoria;
 import com.proyecto.mvc.models.CategoriaList;
+import com.proyecto.mvc.models.Tarea;
+import com.proyecto.mvc.models.TareaList;
 import com.proyecto.mvc.views.ViewPrincipal;
 import com.proyecto.mvc.views.sistema.FormCategoria;
 import com.proyecto.mvc.views.sistema.IndexCategorias;
@@ -13,10 +15,12 @@ import com.proyecto.mvc.views.sistema.IndexCategorias;
 public class ControllerCategorias extends Functions {
 
 	private CategoriaList categoriaList;
+	private TareaList tareaList;
 	private ViewPrincipal vp;
 
-	public ControllerCategorias(CategoriaList categoriaList, ViewPrincipal vp) {
+	public ControllerCategorias(CategoriaList categoriaList, TareaList tareaList, ViewPrincipal vp) {
 		this.categoriaList = categoriaList;
+		this.tareaList = tareaList;
 		this.vp = vp;
 	}
 
@@ -39,6 +43,14 @@ public class ControllerCategorias extends Functions {
 		v.btnEliminar.addActionListener(e -> {
 			int id = getSelectedID(v.table);
 			if (id > 0) {
+
+				ArrayList<Tarea> pendientes = tareaList.pendientesPorCategoria(id);
+				if (!pendientes.isEmpty()) {
+					JOptionPane.showMessageDialog(null,
+							"No se puede eliminar. La categoria tiene tareas pendientes.");
+					return;
+				}
+
 				int option = JOptionPane.showConfirmDialog(null, "Desea eliminar la categoria?");
 				if (option == JOptionPane.YES_OPTION) {
 					categoriaList.destroy(id);
