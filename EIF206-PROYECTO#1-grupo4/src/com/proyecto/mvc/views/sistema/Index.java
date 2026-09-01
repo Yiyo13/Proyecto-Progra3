@@ -49,7 +49,7 @@ public class Index extends JPanel {
 		panel.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		JLabel lblCategora = new JLabel("Categor\u00EDa");
+		JLabel lblCategora = new JLabel("Categoria");
 		lblCategora.setVerticalTextPosition(SwingConstants.BOTTOM);
 		lblCategora.setVerticalAlignment(SwingConstants.BOTTOM);
 		panel_1.add(lblCategora);
@@ -68,7 +68,7 @@ public class Index extends JPanel {
 		JPanel panel_3 = new JPanel();
 		panel_2.add(panel_3, BorderLayout.NORTH);
 
-		JLabel lblCategora_1 = new JLabel("Categor\u00EDa");
+		JLabel lblCategora_1 = new JLabel("Categoria");
 		lblCategora_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCategora_1.setHorizontalTextPosition(SwingConstants.LEFT);
 		panel_3.add(lblCategora_1);

@@ -59,14 +59,14 @@ public class Form extends JPanel {
 		panel_1.add(tNombre);
 		tNombre.setColumns(10);
 
-		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
+		JLabel lblDescripcin = new JLabel("Descripcion");
 		panel_1.add(lblDescripcin);
 
 		taDescripcion = new JTextArea();
 		taDescripcion.setMinimumSize(new Dimension(20, 20));
 		panel_1.add(taDescripcion);
 
-		JLabel lblCategora = new JLabel("Categor\u00EDa");
+		JLabel lblCategora = new JLabel("Categoria");
 		panel_1.add(lblCategora);
 
 		cbxCategoria = new JComboBox();

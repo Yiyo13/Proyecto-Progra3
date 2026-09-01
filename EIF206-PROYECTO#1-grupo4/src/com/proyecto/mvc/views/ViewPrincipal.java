@@ -55,7 +55,7 @@ public class ViewPrincipal extends JFrame {
 		btnTareasCompletadas.setPreferredSize(new Dimension(151, 40));
 		panel_1.add(btnTareasCompletadas);
 		
-		btnCategoras = new JButton("Categor\u00EDas");
+		btnCategoras = new JButton("Categorias");
 		panel_1.add(btnCategoras);
 		
 		panelContenido = new JPanel();
