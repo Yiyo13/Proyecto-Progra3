@@ -60,8 +60,6 @@ public class IndexCategorias extends JPanel {
 		model = new DefaultTableModel();
 		model.addColumn("ID");
 		model.addColumn("Nombre");
-		model.addRow(new Object[]{1, "Universidad"});
-		model.addRow(new Object[]{2, "Trabajo"});//prueba para ver si la ventana funciona, recordar eliminar
 		
 		table = new JTable(model);
 		scrollPane.setViewportView(table);

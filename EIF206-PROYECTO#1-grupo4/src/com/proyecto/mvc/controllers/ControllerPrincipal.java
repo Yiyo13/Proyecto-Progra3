@@ -48,20 +48,22 @@ public class ControllerPrincipal {
 		categoriaList.store(personal);
 		categoriaList.store(universidad);
 
-		// 10 tareas por categoria (algunas ya completadas), minimo 30 en total
-		for (int i = 1; i <= 10; i++) {
-			boolean completada = (i % 3 == 0);
-			tareaList.store(new Tarea("Tarea Trabajo " + i, "Descripcion de la tarea " + i, completada, trabajo.getId()));
-		}
+		// 10 tareas por categoria, entre 2 y 6 completadas por categoria
+		cargarTareasDePrueba(trabajo, 4);
+		cargarTareasDePrueba(personal, 6);
+		cargarTareasDePrueba(universidad, 2);
+
+	}
+
+	private void cargarTareasDePrueba(Categoria categoria, int cantidadCompletadas) {
 
 		for (int i = 1; i <= 10; i++) {
-			boolean completada = (i % 4 == 0);
-			tareaList.store(new Tarea("Tarea Personal " + i, "Descripcion de la tarea " + i, completada, personal.getId()));
-		}
-
-		for (int i = 1; i <= 10; i++) {
-			boolean completada = (i % 5 == 0);
-			tareaList.store(new Tarea("Tarea Universidad " + i, "Descripcion de la tarea " + i, completada, universidad.getId()));
+			boolean completada = (i <= cantidadCompletadas);
+			tareaList.store(new Tarea(
+					"Tarea " + categoria.getNombre() + " " + i,
+					"Descripcion de la tarea " + i,
+					completada,
+					categoria.getId()));
 		}
 
 	}

@@ -82,8 +82,6 @@ public class Index extends JPanel {
 		model.addColumn("Nombre");
 		model.addColumn("Descripcion");
 
-		model.addRow(new Object[]{1, "Tarea de prueba", "Trabajo"});
-		model.addRow(new Object[]{2, "Otra tarea", "Personal"});//prueba para ver si la ventana funciona, recordar eliminar
 		table = new JTable(model);
 		scrollPane.setViewportView(table);
 
