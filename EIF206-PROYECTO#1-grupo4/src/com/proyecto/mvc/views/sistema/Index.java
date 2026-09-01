@@ -25,6 +25,7 @@ public class Index extends JPanel {
 	public JButton btnGuardar;
 	public JButton btnEditar;
 	public JButton btnEliminar;
+	public JLabel lblTareasPendientes;
 
 	/**
 	 * Create the panel.
@@ -37,7 +38,7 @@ public class Index extends JPanel {
 		add(panel, BorderLayout.NORTH);
 		panel.setLayout(new GridLayout(2, 1, 0, 0));
 
-		JLabel lblTareasPendientes = new JLabel("Tareas Pendientes");
+		lblTareasPendientes = new JLabel("Tareas Pendientes");
 		lblTareasPendientes.setMaximumSize(new Dimension(106, 40));
 		lblTareasPendientes.setPreferredSize(new Dimension(135, 60));
 		lblTareasPendientes.setForeground(Color.WHITE);

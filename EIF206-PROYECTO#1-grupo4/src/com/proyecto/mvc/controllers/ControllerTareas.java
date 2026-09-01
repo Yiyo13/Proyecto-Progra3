@@ -30,6 +30,7 @@ public class ControllerTareas extends Functions {
 	public void indexPendientes() {
 
 		Index v = new Index();
+		v.lblTareasPendientes.setText("Tareas Pendientes");
 		cargarComboCategorias(v.cbxCategoria);
 
 		v.btnCargar.addActionListener(e -> {
@@ -73,6 +74,7 @@ public class ControllerTareas extends Functions {
 	public void indexCompletadas() {
 
 		Index v = new Index();
+		v.lblTareasPendientes.setText("Tareas Completadas");
 		cargarComboCategorias(v.cbxCategoria);
 
 		v.btnCargar.addActionListener(e -> {

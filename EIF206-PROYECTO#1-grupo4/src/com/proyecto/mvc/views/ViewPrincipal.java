@@ -23,7 +23,6 @@ public class ViewPrincipal extends JFrame {
 	public JButton btnTareasCompletadas;
 	public JButton btnCategoras;
 	private JPanel panelContenido;
-	
 
 	/**
 	 * Create the frame.
@@ -59,6 +58,7 @@ public class ViewPrincipal extends JFrame {
 		panel_1.add(btnCategoras);
 		
 		panelContenido = new JPanel();
+		panelContenido.setLayout(new BorderLayout(0, 0));
 		contentPane.add(panelContenido, BorderLayout.CENTER);
 	}
 	
