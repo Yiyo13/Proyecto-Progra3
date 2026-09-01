@@ -13,8 +13,7 @@ public class ControllerPrincipal {
 	private ViewPrincipal vp;
 
 	private ControllerTareas controllerTareas;
-	// TODO: cuando exista ControllerCategorias, agregar:
-	// private ControllerCategorias controllerCategorias;
+	private ControllerCategorias controllerCategorias;
 
 	public ControllerPrincipal() {
 		categoriaList = new CategoriaList();
@@ -27,14 +26,11 @@ public class ControllerPrincipal {
 		loadData();
 
 		controllerTareas = new ControllerTareas(tareaList, categoriaList, vp);
-		// TODO: cuando exista ControllerCategorias, agregar:
-		// controllerCategorias = new ControllerCategorias(categoriaList, vp);
+		controllerCategorias = new ControllerCategorias(categoriaList, vp);
 
 		vp.btnTareasPendientes.addActionListener(e -> controllerTareas.indexPendientes());
 		vp.btnTareasCompletadas.addActionListener(e -> controllerTareas.indexCompletadas());
-
-		// TODO: cuando exista ControllerCategorias, agregar:
-		// vp.btnCategoras.addActionListener(e -> controllerCategorias.index());
+		vp.btnCategoras.addActionListener(e -> controllerCategorias.index());
 
 		vp.init();
 

@@ -1,10 +1,13 @@
 package com.proyecto.init;
 
+import com.proyecto.mvc.controllers.ControllerPrincipal;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Si compilo");
+
+		new ControllerPrincipal().init();
+
 	}
 
 }
