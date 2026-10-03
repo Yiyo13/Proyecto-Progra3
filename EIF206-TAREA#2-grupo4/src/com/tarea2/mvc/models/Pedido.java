@@ -9,6 +9,7 @@ public class Pedido implements Serializable {
 	private int idPedido;
 	private String nombreCliente;
 	private boolean entregado;
+	
 	public Pedido(int idPedido, String nombreCliente, boolean entregado) {
 		this.idPedido = idPedido;
 		this.nombreCliente = nombreCliente;
