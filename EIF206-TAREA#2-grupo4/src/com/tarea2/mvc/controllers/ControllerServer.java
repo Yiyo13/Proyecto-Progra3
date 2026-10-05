@@ -2,8 +2,10 @@ package com.tarea2.mvc.controllers;
 
 import javax.swing.SwingUtilities;
 
+import com.tarea2.mvc.models.ListaPedidos;
 import com.tarea2.mvc.models.Pedido;
 import com.tarea2.mvc.models.Server;
+import com.tarea2.mvc.views.ViewServer;
 
 public class ControllerServer {
 
@@ -19,6 +21,7 @@ public class ControllerServer {
 	}
 	
 	public void init() {
+		v.init();
 		server = new Server(this);
 		server.start();
 		
@@ -26,12 +29,11 @@ public class ControllerServer {
 	}
 	
 	public void nuevoPedido(Pedido pedido) {
-		lp.agregar(pedido);
-		
 		SwingUtilities.invokeLater(() -> {
-			v.mostrarPedidos(lista); //pendiente con la vista del server, sirve para que el hilo correcto toque la ventana
-			v.mostrarTotales(lista);// de la vista para actualizar
-			
+			lp.agregar(pedido); // se agrega en el hilo de Swing para no modificar la lista mientras la vista la recorre
+			v.mostrarPedidos(lp); //pendiente con la vista del server, sirve para que el hilo correcto toque la ventana
+			v.mostrarTotales(lp);// de la vista para actualizar
+
 		});
 	}
 }
