@@ -14,22 +14,28 @@ public class Client {
 		this.host = host;
 	}
 	
-	public void conectar() {
+	// retorna true si logro conectarse (el controller decide que mostrar)
+	public boolean conectar() {
 		try {
 			client = new Socket(host, PORT);
 			out = new ObjectOutputStream(client.getOutputStream());
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
-	public void enviarPedido(Pedido pedido) {
+	// retorna true si el pedido se envio
+	public boolean enviarPedido(Pedido pedido) {
 		try {
 			out.writeObject(pedido);
 			out.flush();
 			close();
-			
+			return true;
+
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 	

@@ -44,8 +44,8 @@ public class Platillo implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Platilo idPlatilo=" + idPlatilo + ", nombrePlatillo=" + nombrePlatillo + ", precioPlatillo="
-				+ precioPlatillo ;
+		// el JComboBox muestra esto: "Hamburguesa (2500)"
+		return nombrePlatillo + " (" + String.format("%.0f", precioPlatillo) + ")";
 	}
 	
 	
