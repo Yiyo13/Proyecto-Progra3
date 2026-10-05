@@ -2,7 +2,7 @@ package com.tarea2.mvc.models;
 
 import java.io.Serializable;
 
-public class Platilo implements Serializable {
+public class Platillo implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +13,7 @@ public class Platilo implements Serializable {
 	
 	
 	
-	public Platilo(int idPlatilo, String nombrePlatillo, double precioPlatillo) {
+	public Platillo(int idPlatilo, String nombrePlatillo, double precioPlatillo) {
 		this.idPlatilo = contador++;
 		this.nombrePlatillo = nombrePlatillo;
 		this.precioPlatillo = precioPlatillo;
@@ -22,7 +22,7 @@ public class Platilo implements Serializable {
 		return contador;
 	}
 	public static void setContador(int contador) {
-		Platilo.contador = contador;
+		Platillo.contador = contador;
 	}
 	public int getIdPlatilo() {
 		return idPlatilo;
