@@ -34,7 +34,7 @@ public class ControllerClient {
 		cargarCombo();
 		cargarTabla();
 
-		v.allowPedido(false);
+		//v.allowPedido(false); //comentada para probar la tabla
 
 		v.btnConectar.addActionListener(e -> {
 
