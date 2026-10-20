@@ -1,7 +1,6 @@
 package com.gestionseries.mvc.controllers;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import javax.swing.JOptionPane;
 
@@ -143,12 +142,10 @@ public class ControllerSeries {
 			mensaje("La calificacion debe ser un numero");
 			return;
 		}
-		if (Double.isNaN(calificacion) || calificacion < 0 || calificacion > 10) {
+		if (calificacion < 0 || calificacion > 10) {
 			mensaje("La calificacion debe estar entre 0 y 10");
 			return;
 		}
-		// la columna es DECIMAL(3,1): se deja un solo decimal
-		calificacion = Math.round(calificacion * 10) / 10.0;
 
 		Genero genero = (Genero) v.cbxGenero.getSelectedItem();
 		if (genero == null || genero.getId() == 0) {
@@ -230,8 +227,7 @@ public class ControllerSeries {
 			promedio = suma / lista.size();
 		}
 
-		// Locale.US para que el decimal sea punto (8.75) y no coma
-		v.lblPromedio.setText(String.format(Locale.US, "%.2f", promedio));
+		v.lblPromedio.setText(String.format("%.2f", promedio));
 		v.lblCantidad.setText(lista.size() + "");
 	}
 
