@@ -43,7 +43,7 @@ public class Propietario {
 	}
 	@Override
 	public String toString() {
-		return "Propietario [id=" + id + ", nombre=" + nombre + ", telefono=" + telefono + ", edad=" + edad + "]";
+		return nombre;
 	}
 	
 	
