@@ -46,7 +46,7 @@ public class Form extends JPanel {
 		add(lblFecha);
 
 		dcFecha = new JDateChooser();
-		dcFecha.setDateFormatString("yyyy-MM-dd");
+		dcFecha.setDateFormatString("dd/MM/yyyy");
 		dcFecha.setBounds(140, 102, 160, 22);
 		add(dcFecha);
 

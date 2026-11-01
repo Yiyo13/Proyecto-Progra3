@@ -75,6 +75,7 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 	public void create() {
 		Form v = new Form();
 		cargarPropietarios(v.cbxPropietario);
+		cargarEspecies(v.cbxEspecie);
 
 		v.btnRegresar.addActionListener(e -> {
 			index();
@@ -100,11 +101,12 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 
 		Form v = new Form();
 		cargarPropietarios(v.cbxPropietario);
+		cargarEspecies(v.cbxEspecie);
 
 		v.btnRegistrar.setText("Actualizar");
 		seleccionarPropietario(v.cbxPropietario, item.getPropietario());
 		v.tNombre.setText(item.getNombre());
-		v.tEspecie.setText(item.getEspecie());
+		v.cbxEspecie.setSelectedItem(item.getEspecie());
 		v.tRaza.setText(item.getRaza());
 		v.dcNacimiento.setDate(item.getFechaNacimiento());
 
@@ -121,7 +123,6 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 		cp.vp.setContenido(v, "Editar Mascota");
 	}
 
-	// mascota, propietario e historial
 	@Override
 	public void show(int id) {
 		Mascota item = dao.find(id);
@@ -133,7 +134,6 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 
 		Show v = new Show();
 
-		// datos mascota
 		v.lNombre.setText(item.getNombre());
 		v.lEspecie.setText(item.getEspecie());
 		v.lRaza.setText(item.getRaza());
@@ -142,14 +142,12 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 			v.lEdad.setText(item.getEdad() + " anios");
 		}
 
-		// datos propietario
 		Propietario p = item.getPropietario();
 		v.lPropietario.setText(p.getNombre());
 		v.lTelefono.setText(p.getTelefono());
 		v.lCorreo.setText(p.getCorreo());
 		v.lDireccion.setText(p.getDireccion());
 
-		// historial, cantidad y total
 		ArrayList<Consulta> historial = daoConsulta.historialByMascota(id);
 		Object[][] data = new Object[historial.size()][4];
 		double total = 0;
@@ -198,7 +196,6 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 		return new String[] { "ID", "Nombre", "Especie", "Raza", "Nacimiento", "Propietario" };
 	}
 
-	// dao puede dar false aunque guarde, siempre vuelve index
 	@Override
 	public void store(Mascota item) {
 		if (dao.store(item)) {
@@ -229,9 +226,6 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 		index();
 	}
 
-	// AUXILIARES
-
-	// item ayuda (id 0) y propietarios
 	private void cargarPropietarios(JComboBox<Propietario> combo) {
 		combo.removeAllItems();
 		combo.addItem(new Propietario(0, "Seleccione un propietario", "", "", ""));
@@ -242,7 +236,19 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 		AutoCompleteDecorator.decorate(combo);
 	}
 
-	// selecciona propietario por id
+	private void cargarEspecies(JComboBox<String> combo) {
+		combo.removeAllItems();
+		combo.addItem("Seleccione una especie");
+		combo.addItem("Perro");
+		combo.addItem("Gato");
+		combo.addItem("Ave");
+		combo.addItem("Conejo");
+		combo.addItem("Hamster");
+		combo.addItem("Tortuga");
+		combo.addItem("Otro");
+		combo.setSelectedIndex(0);
+	}
+
 	private void seleccionarPropietario(JComboBox<Propietario> combo, Propietario propietario) {
 		if (propietario == null) {
 			return;
@@ -263,15 +269,19 @@ public class ControllerMascotas extends Functions implements Controller<Mascota>
 		}
 
 		String nombre = v.tNombre.getText().trim();
-		String especie = v.tEspecie.getText().trim();
+		String especie = (String) v.cbxEspecie.getSelectedItem();
 		String raza = v.tRaza.getText().trim();
 
 		if (nombre.isEmpty()) {
 			mensaje("Debe indicar el nombre");
 			return null;
 		}
-		if (especie.isEmpty()) {
-			mensaje("Debe indicar la especie");
+		if (v.cbxEspecie.getSelectedIndex() <= 0) {
+			mensaje("Debe seleccionar la especie");
+			return null;
+		}
+		if (raza.isEmpty()) {
+			mensaje("Debe indicar la raza");
 			return null;
 		}
 		if (v.dcNacimiento.getDate() == null) {

@@ -14,7 +14,7 @@ public class Form extends JPanel {
 	private static final long serialVersionUID = 1L;
 	public JComboBox<Propietario> cbxPropietario;
 	public JTextField tNombre;
-	public JTextField tEspecie;
+	public JComboBox<String> cbxEspecie;
 	public JTextField tRaza;
 	public JDateChooser dcNacimiento;
 	public JButton btnRegistrar;
@@ -43,9 +43,9 @@ public class Form extends JPanel {
 		lblEspecie.setBounds(27, 105, 100, 16);
 		add(lblEspecie);
 
-		tEspecie = new JTextField();
-		tEspecie.setBounds(140, 102, 250, 22);
-		add(tEspecie);
+		cbxEspecie = new JComboBox<String>();
+		cbxEspecie.setBounds(140, 102, 250, 22);
+		add(cbxEspecie);
 
 		JLabel lblRaza = new JLabel("Raza");
 		lblRaza.setBounds(27, 140, 100, 16);
@@ -60,7 +60,7 @@ public class Form extends JPanel {
 		add(lblNacimiento);
 
 		dcNacimiento = new JDateChooser();
-		dcNacimiento.setDateFormatString("yyyy-MM-dd");
+		dcNacimiento.setDateFormatString("dd/MM/yyyy");
 		dcNacimiento.setBounds(140, 172, 160, 22);
 		add(dcNacimiento);
 

@@ -39,7 +39,7 @@ public class Inicio extends JPanel {
 		reporte1.add(lblInicio);
 
 		dcInicio = new JDateChooser();
-		dcInicio.setDateFormatString("yyyy-MM-dd");
+		dcInicio.setDateFormatString("dd/MM/yyyy");
 		dcInicio.setBounds(110, 30, 140, 22);
 		reporte1.add(dcInicio);
 
@@ -48,7 +48,7 @@ public class Inicio extends JPanel {
 		reporte1.add(lblFin);
 
 		dcFin = new JDateChooser();
-		dcFin.setDateFormatString("yyyy-MM-dd");
+		dcFin.setDateFormatString("dd/MM/yyyy");
 		dcFin.setBounds(340, 30, 140, 22);
 		reporte1.add(dcFin);
 

@@ -151,7 +151,6 @@ public class ControllerPropietarios extends Functions implements Controller<Prop
 		return new String[] { "ID", "Nombre", "Telefono", "Correo", "Direccion" };
 	}
 
-	// dao puede dar false aunque guarde, siempre vuelve index
 	@Override
 	public void store(Propietario item) {
 		if (dao.store(item)) {
@@ -182,8 +181,6 @@ public class ControllerPropietarios extends Functions implements Controller<Prop
 		index();
 	}
 
-	// AUXILIARES
-
 	private Propietario leerFormulario(Form v) {
 		String nombre = v.tNombre.getText().trim();
 		String telefono = v.tTelefono.getText().trim();
@@ -196,6 +193,14 @@ public class ControllerPropietarios extends Functions implements Controller<Prop
 		}
 		if (telefono.isEmpty()) {
 			mensaje("Debe indicar el telefono");
+			return null;
+		}
+		if (correo.isEmpty()) {
+			mensaje("Debe indicar el correo");
+			return null;
+		}
+		if (direccion.isEmpty()) {
+			mensaje("Debe indicar la direccion");
 			return null;
 		}
 

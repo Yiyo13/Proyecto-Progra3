@@ -103,7 +103,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		prepararCombos(v);
 
 		v.btnRegistrar.setText("Actualizar");
-		// primero propietario (recarga mascotas) y luego mascota
 		seleccionarPropietario(v.cbxPropietario, item.getMascota().getPropietario().getId());
 		seleccionarMascota(v.cbxMascota, item.getMascota().getId());
 		v.dcFecha.setDate(item.getFecha());
@@ -124,7 +123,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		cp.vp.setContenido(v, "Editar Consulta");
 	}
 
-	// consulta con mascota y propietario
 	@Override
 	public void show(int id) {
 		Consulta item = dao.find(id);
@@ -183,7 +181,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		return new String[] { "ID", "Fecha", "Mascota", "Propietario", "Motivo", "Costo" };
 	}
 
-	// dao puede dar false aunque guarde, siempre vuelve index
 	@Override
 	public void store(Consulta item) {
 		if (dao.store(item)) {
@@ -214,9 +211,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		index();
 	}
 
-	// AUXILIARES
-
-	// carga combos, cambia propietario y recarga mascotas
 	private void prepararCombos(Form v) {
 		cargarPropietarios(v.cbxPropietario);
 		cargarMascotas(v.cbxMascota, 0);
@@ -232,7 +226,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		AutoCompleteDecorator.decorate(v.cbxMascota);
 	}
 
-	// item ayuda (id 0) y propietarios
 	private void cargarPropietarios(JComboBox<Propietario> combo) {
 		combo.removeAllItems();
 		combo.addItem(new Propietario(0, "Seleccione un propietario", "", "", ""));
@@ -242,7 +235,6 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 		combo.setSelectedIndex(0);
 	}
 
-	// item ayuda (id 0) y mascotas del propietario
 	private void cargarMascotas(JComboBox<Mascota> combo, int idPropietario) {
 		combo.removeAllItems();
 		combo.addItem(new Mascota(0, "Seleccione una mascota", "", "", null, null));
@@ -290,6 +282,10 @@ public class ControllerConsultas extends Functions implements Controller<Consult
 
 		if (motivo.isEmpty()) {
 			mensaje("Debe indicar el motivo");
+			return null;
+		}
+		if (diagnostico.isEmpty()) {
+			mensaje("Debe indicar el diagnostico");
 			return null;
 		}
 
